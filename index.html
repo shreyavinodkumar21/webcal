@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Distance and Angle Calculator</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+    <h1>Distance and Angle Calculator</h1>
+    <label for="calculationType">Select Calculation Type:</label>
+    <select id="calculationType"> 
+        <option value="distance">Distance</option>
+        <option value="angle">Angle</option>
+    </select>
+    <br />
+
+    <div id="distanceOptions" style="display: none;">
+        <label for="distanceResidue1">Select Residue Number:</label>
+        <select id="distanceResidue1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br/>
+        <label for="atomName">Select Atom Name:</label>
+        <select id="atomName">
+            <option value="C">C</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="NH">NH</option>
+            <option value="NH2">NH2</option>
+            
+        <br />
+        <!-- Atom options will be populated dynamically -->
+        </select>
+        
+        <br />
+        <label for="distanceResidue2">Select Residue Number:</label>
+        <select id="distanceResidue2">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br/>
+        <label for="atomName">Select Atom Name:</label>
+        <select id="atomName">
+            <option value="C">C</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="NH">NH</option>
+            <option value="NH2">NH2</option>
+        <!-- Atom options will be populated dynamically -->
+        </select>
+        <br />
+        
+        <!-- Add more distance options as needed -->
+    </div>
+
+    <div id="angleOptions" style="display: 3px;">
+        <label for="angleResidue1">Select Residue Number:</label>
+        <select id="angleResidue1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br />
+        <label for="atomName">Select Atom Name:</label>
+        <select id="atomName">
+            <option value="C">C</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="NH">NH</option>
+            <option value="NH2">NH2</option>
+        <!-- Atom options will be populated dynamically -->
+        </select>
+        
+        <br />
+        
+        <label for="angleResidue1">Select Residue Number:</label>
+        <select id="angleResidue1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br />
+        <label for="atomName">Select Atom Name:</label>
+        <select id="atomName">
+            <option value="C">C</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="NH">NH</option>
+            <option value="NH2">NH2</option>
+        <!-- Atom options will be populated dynamically -->
+        </select>
+        <br />
+        <label for="angleResidue1">Select Residue Number:</label>
+        <select id="angleResidue1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br />
+        <label for="atomName">Select Atom Name:</label>
+        <select id="atomName">
+            <option value="C">C</option>
+            <option value="N">N</option>
+            <option value="O">O</option>
+            <option value="NH">NH</option>
+            <option value="NH2">NH2</option>
+        <!-- Atom options will be populated dynamically -->
+        </select>
+        <br />
+        <!-- Add more angle options as needed -->
+    </div>
+
+    <button id="calculateButton">Calculate</button>
+
+    <div id="result">
+        <!-- Calculated result will be displayed here -->
+    </div>
+
+    <script>
+        // JavaScript code goes here
+
+        // Event listener for the calculation type selection
+        document.getElementById("calculationType").addEventListener("change", () => {
+            const calculationType = document.getElementById("calculationType").value;
+            const distanceOptions = document.getElementById("distanceOptions");
+            const angleOptions = document.getElementById("angleOptions");
+
+            if (calculationType === "distance") {
+                distanceOptions.style.display = "block";
+                angleOptions.style.display = "none";
+            } else if (calculationType === "angle") {
+                distanceOptions.style.display = "none";
+                angleOptions.style.display = "block";
+            }
+        });
+
+        // Event listener for the Calculate button
+        document.getElementById("calculateButton").addEventListener("click", () => {
+            const calculationType = document.getElementById("calculationType").value;
+
+            if (calculationType === "distance") {
+                const residue1 = document.getElementById("distanceResidue1").value;
+                // Retrieve other distance options if needed
+
+                // Perform distance calculation based on the selected options and display the result
+                const resultText = `Distance calculation: Residue ${residue1}`;
+                document.getElementById("result").textContent = resultText;
+            } else if (calculationType === "angle") {
+                const residue1 = document.getElementById("angleResidue1").value;
+                // Retrieve other angle options if needed
+
+                // Perform angle calculation based on the selected options and display the result
+                const resultText = `Angle calculation: Residue ${residue1}`;
+                document.getElementById("result").textContent = resultText;
+            }
+        });
+    </script>
+</body>
+</html>
